@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, combineReducers, compose } from "redux";
 import thunkMiddleWare from "redux-thunk";
+//router
+import { BrowserRouter } from "react-router-dom";
 
 import authReducer from "./store/reducers/authReducer";
 import burgerReducer from "./store/reducers/burgerReducer";
@@ -27,7 +29,9 @@ const store = createStore(
 
 const application = (
   <Provider store={store}>
-    <App />
+    <BrowserRouter basename='/'>
+      <App />
+    </BrowserRouter>
   </Provider>
 );
 
