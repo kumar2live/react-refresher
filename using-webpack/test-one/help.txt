@@ -10,3 +10,16 @@ npm i -D react react-dom
 
 // to load the html
 npm i -D html-webpack-plugin html-loader
+
+// to load images or assets
+npm i -D file-loader
+
+// to load sass
+npm i -D node-sass sass-loader css-loader mini-css-extract-plugin
+
+// to handle environments
+npm i -D cross-env
+
+// to add type script
+
+npm i -D @babel/preset-typescript typescript
