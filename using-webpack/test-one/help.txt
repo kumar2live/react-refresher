@@ -6,7 +6,7 @@ install the dependencies
 
 npm i -D webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader
 
-npm i -D react react-dom
+npm i react react-dom --save
 
 // to load the html
 npm i -D html-webpack-plugin html-loader
@@ -23,3 +23,4 @@ npm i -D cross-env
 // to add type script
 
 npm i -D @babel/preset-typescript typescript
+npm i -D @types/react @types/react-dom
