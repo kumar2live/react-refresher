@@ -1,0 +1,12 @@
+initiate the project by running
+
+npm init
+
+install the dependencies
+
+npm i -D webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader
+
+npm i -D react react-dom
+
+// to load the html
+npm i -D html-webpack-plugin html-loader
