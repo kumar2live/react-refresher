@@ -1,6 +1,11 @@
 const HtmlPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: "bundle.js",
+  },
   module: {
     rules: [
       {
@@ -28,4 +33,8 @@ module.exports = {
       template: "./src/index.html",
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+    port: 5000,
+  },
 };
