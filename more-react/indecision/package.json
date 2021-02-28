@@ -1,0 +1,20 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src/app.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch",
+    "compile-es": "babel src/playground/es6-let-const.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch",
+    "compile-arrow": "babel src/playground/es6-arrow-f.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/preset-react": "^7.12.13"
+  }
+}

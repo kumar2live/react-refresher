@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.container h3 {
+  color: coral;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  background: coral;
+  color: white;
+  padding: 15px;
+  font-size: larger;
+  box-shadow: 0px 1px 9px 0px coral;
+}
+
+main {
+  margin: 2rem;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  background: coral;
+  border: 0;
+  color: white;
+  box-shadow: 0px 0px 2px 0px coral;
+  outline: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: gray;
+  box-shadow: 0px 0px 2px 0px gray;
+  color: rgb(241, 222, 202);
+}
+
+input[type="text"] {
+  margin: 5px;
+  padding: 8px;
+}
+
+input[type="text"]:focus {
+  border: 1px solid coral;
+  outline: none;
+  color: coral;
+}

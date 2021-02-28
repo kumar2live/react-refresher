@@ -1,0 +1,53 @@
+{
+  "consoleStatus": [
+    {
+      "id": 1,
+      "sectionId": "t24",
+      "sectionName": "T24",
+      "entityName": "TSM",
+      "entityStatus": "Online"
+    },
+    {
+      "id": 2,
+      "sectionId": "t24",
+      "sectionName": "T24",
+      "entityName": "TCS",
+      "entityStatus": "Online"
+    },
+    {
+      "id": 3,
+      "sectionId": "t24",
+      "sectionName": "T24",
+      "entityName": "SWIFT IN",
+      "entityStatus": "Online"
+    },
+    {
+      "id": 4,
+      "sectionId": "t24",
+      "sectionName": "T24",
+      "entityName": "SWIFT OUT",
+      "entityStatus": "Offline"
+    },
+    {
+      "id": 5,
+      "sectionId": "externalLinks",
+      "sectionName": "External Links",
+      "entityName": "Thomson Reuters",
+      "entityStatus": "Online"
+    },
+    {
+      "id": 5,
+      "sectionId": "externalLinks",
+      "sectionName": "External Links",
+      "entityName": "Cartex",
+      "entityStatus": "Online"
+    },
+    {
+      "id": 5,
+      "sectionId": "externalLinks",
+      "sectionName": "External Links",
+      "entityName": "Bloomberg",
+      "entityStatus": "Online"
+    }
+  ]
+}
