@@ -8,7 +8,7 @@ import {
 } from "../app-contexts/AudioContext";
 // import { useAudio } from "../app-hooks/useAudio";
 
-function EntityContainer({ title }) {
+function EntityContainer({ title, entities }) {
   // const [playing, toggle] = useAudio();
   // const [isPlaying, togglePlay] = useContext(AudioContext);
   const isPlaying = useAudioContext();
@@ -16,20 +16,10 @@ function EntityContainer({ title }) {
 
   return (
     <div>
-      {!isPlaying && (
-        <p className="text-white" onClick={togglePlay}>
-          Not playing
-        </p>
-      )}
-      {isPlaying && (
-        <p className="text-white" onClick={togglePlay}>
-          Playing
-        </p>
-      )}
-      <div className="d-flex flex-column border">
+      <div className="d-flex flex-column border m-3">
         <div className="d-flex justify-content-between">
           <div className="pl-3 pt-2 align-self-start">
-            <h2 className="text-white font-weight-bold">{title}</h2>
+            <h3 className="text-white font-weight-bold">{title}</h3>
           </div>
 
           <div
@@ -40,23 +30,18 @@ function EntityContainer({ title }) {
             <img
               alt="offline"
               src={isPlaying ? offline : offlineSnoozed}
-              height={80}
+              height={40}
             />
           </div>
         </div>
 
-        <div className="p-2">
-          <Entity name="TSM" status="online" />
-        </div>
-        <div className="p-2">
-          <Entity name="TCS" status="online" />
-        </div>
-        <div className="p-2">
-          <Entity name="SWIFT IN" status="online" />
-        </div>
-        <div className="p-2">
-          <Entity name="SWIFT OUT" status="offline" />
-        </div>
+        {entities && entities.length > 0
+          ? entities.map((ent) => (
+              <div className="p-2" key={ent.entityName}>
+                <Entity name={ent.entityName} status={ent.status} />
+              </div>
+            ))
+          : null}
       </div>
     </div>
   );

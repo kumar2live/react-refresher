@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-header {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.time-display {
+  border: 2px solid whitesmoke;
+  font-weight: bold;
+  color: white;
+  padding: 5px 15px;
+  background-color: #000;
+}

@@ -4,8 +4,6 @@ import "./App.scss";
 import AppConsole from "./containers/AppConsole";
 
 function App() {
-  // console.log("timez: ", timez.getTimezonesForCountry("HK"));
-
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:3005/blogPosts")
