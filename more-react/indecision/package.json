@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "babel src/app.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch",
     "compile-es": "babel src/playground/es6-let-const.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch",
-    "compile-arrow": "babel src/playground/es6-arrow-f.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch"
+    "compile-arrow": "babel src/playground/es6-arrow-f.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch",
+    "compile-appclass": "babel src/playground/app-classbased.js --out-file=public/scripts/app.js --presets=@babel/env,@babel/react --watch"
   },
   "keywords": [],
   "author": "",
