@@ -16,7 +16,9 @@ const ExternalLinksEntities = [
   { entityName: "Bloomberg", status: "online" },
 ];
 
-function AppConsole() {
+function AppConsole({ data }) {
+  console.log("data: ", data);
+
   return (
     <div>
       <Header />

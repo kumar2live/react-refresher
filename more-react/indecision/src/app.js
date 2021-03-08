@@ -1,47 +1,80 @@
-const app = {
-  title: "Indecision App",
-  subtitle: "What do you want to do?",
-  options: ["Learn React More", "Practice with the app more"],
-};
+class Indecision extends React.Component {
+  render() {
+    const title = "Indecision";
+    const subtitle = "What do you want to do?";
+    const options = ["Learn React More", "Practice with the app more"];
 
-const onSubmitHandler = (e) => {
-  e.preventDefault();
+    return (
+      <div>
+        <Header title={title} />
 
-  const option = e.target.elements.option.value;
-  if (option) {
-    app.options.push(option);
-    e.target.elements.option.value = "";
+        <main>
+          <ActionButton label={subtitle} options={options} />
+
+          <Options options={options} />
+
+          <Form />
+        </main>
+      </div>
+    );
+  }
+}
+
+class ActionButton extends React.Component {
+  onMakeDecision() {}
+
+  render() {
+    return (
+      <>
+        <button
+          disabled={this.props.options.length === 0}
+          onClick={this.onMakeDecision}
+        >
+          {this.props.label}
+        </button>
+      </>
+    );
+  }
+}
+
+class Form extends React.Component {
+  onSubmitHandler(e) {
+    e.preventDefault();
+
+    const option = e.target.elements.option.value;
+    if (option) {
+      // app.options.push(option);
+      e.target.elements.option.value = "";
+    }
   }
 
-  renderCounterApp();
-};
+  render() {
+    return (
+      <form onSubmit={this.onSubmitHandler}>
+        <input type="text" name="option" />
+        <button>Add Option</button>
+      </form>
+    );
+  }
+}
 
-const onRemoveHandler = () => {
-  app.options = [];
-  renderCounterApp();
-};
+class Options extends React.Component {
+  constructor(props) {
+    super(props);
 
-const onMakeDecision = () => {
-  const randomNum = Math.floor(Math.random() * app.options.length);
-  const option = app.options[randomNum];
-  console.log(option);
-};
+    this.onRemoveHandler = this.onRemoveHandler.bind(this);
+  }
 
-const appRoot = document.getElementById("root");
+  onRemoveHandler() {
+    console.log("Onremove: ", this.props);
+  }
 
-const renderCounterApp = () => {
-  const template = (
-    <div>
-      <header>{app.title}</header>
-
-      <main>
-        <button disabled={app.options.length === 0} onClick={onMakeDecision}>
-          What should I do?
-        </button>
-
-        {app.options.length > 0 ? (
+  render() {
+    return (
+      <div>
+        {this.props.options.length > 0 ? (
           <ol>
-            {app.options.map((op) => (
+            {this.props.options.map((op) => (
               <li key={op}>{op}</li>
             ))}
           </ol>
@@ -49,16 +82,16 @@ const renderCounterApp = () => {
           <p>No data found</p>
         )}
 
-        <form onSubmit={onSubmitHandler}>
-          <input type="text" name="option" />
-          <button>Add Option</button>
-        </form>
-        <button onClick={onRemoveHandler}>Remove All</button>
-      </main>
-    </div>
-  );
+        <button onClick={this.onRemoveHandler}>Remove All</button>
+      </div>
+    );
+  }
+}
 
-  ReactDOM.render(template, appRoot);
-};
+class Header extends React.Component {
+  render() {
+    return <header>{this.props.title}</header>;
+  }
+}
 
-renderCounterApp();
+ReactDOM.render(<Indecision />, document.getElementById("root"));

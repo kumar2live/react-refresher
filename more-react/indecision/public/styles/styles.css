@@ -51,3 +51,9 @@ input[type="text"]:focus {
   outline: none;
   color: coral;
 }
+
+li {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid coral;
+}
