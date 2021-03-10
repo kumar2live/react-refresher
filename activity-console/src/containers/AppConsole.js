@@ -23,17 +23,19 @@ function AppConsole({ data }) {
     <div>
       <Header />
 
-      <div className="d-flex justify-content-start">
-        <div className="p-2" style={{ minWidth: "350px" }}>
-          <EntityContainer title="T24" entities={T24Entities} />
+      {data && (
+        <div className="d-flex justify-content-start">
+          <div className="p-2" style={{ minWidth: "350px" }}>
+            <EntityContainer title="T24" entities={data[0]["T24Entities"]} />
+          </div>
+          <div className="p-2" style={{ minWidth: "350px" }}>
+            <EntityContainer
+              title="External Links"
+              entities={ExternalLinksEntities}
+            />
+          </div>
         </div>
-        <div className="p-2" style={{ minWidth: "350px" }}>
-          <EntityContainer
-            title="External Links"
-            entities={ExternalLinksEntities}
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 }

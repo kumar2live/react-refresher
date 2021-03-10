@@ -11,38 +11,31 @@ function App() {
   }, []);
 
   const getData = useCallback(() => {
-    console.log("calling api");
     axios
-      .get("http://localhost:3005/blogPosts")
+      .get("http://localhost:3005/consoleStatus")
       .then((d) => {
-        console.log(d);
-        setData(d);
+        setData(d.data);
       })
       .catch((e) => console.log(e));
   }, []);
 
-  const [intervalDuration, setIntervalDuration] = useState(3000);
+  const [intervalDuration, setIntervalDuration] = useState(5000);
   const [intervalID, setIntervalID] = useState(null);
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    console.log("in app");
-
     setIntervalID(
       setInterval(() => {
         getData();
       }, intervalDuration)
     );
 
-    console.log("intervalID: ", intervalID);
     return () => clearInterval(intervalID);
   }, [intervalDuration]);
 
   return (
     <div className="App">
-      <AudioProvider>
-        <AppConsole data={data}/>
-      </AudioProvider>
+      <AudioProvider>{data && <AppConsole data={data} />}</AudioProvider>
     </div>
   );
 }

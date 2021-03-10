@@ -1,6 +1,42 @@
 {
   "consoleStatus": [
     {
+      "T24Entities": [
+        {
+          "entityName": "TSM",
+          "status": "online"
+        },
+        {
+          "entityName": "TCS",
+          "status": "online"
+        },
+        {
+          "entityName": "SWIFT IN",
+          "status": "online"
+        },
+        {
+          "entityName": "SWIFT OUT",
+          "status": "offline"
+        }
+      ]
+    },
+    {
+      "ExternalLinksEntities": [
+        {
+          "entityName": "Thomson Reutres",
+          "status": "online"
+        },
+        {
+          "entityName": "Cartex",
+          "status": "online"
+        },
+        {
+          "entityName": "Bloomberg",
+          "status": "online"
+        }
+      ]
+    },
+    {
       "id": 1,
       "sectionId": "t24",
       "sectionName": "T24",
