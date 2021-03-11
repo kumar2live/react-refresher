@@ -16,12 +16,12 @@ const ExternalLinksEntities = [
   { entityName: "Bloomberg", status: "online" },
 ];
 
-function AppConsole({ data }) {
+function AppConsole({ data, setSelectedOptions }) {
   console.log("data: ", data);
 
   return (
     <div>
-      <Header />
+      <Header setSelectedOptions={setSelectedOptions}/>
 
       {data && (
         <div className="d-flex justify-content-start">

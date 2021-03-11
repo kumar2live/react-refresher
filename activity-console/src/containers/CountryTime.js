@@ -28,7 +28,7 @@ function CountryTime({ timezone, countryName, type }) {
       </div>
       <div className="">
         <div className="text-white time-display">
-          <Clock format={"hh:mm  A"} ticking={true} timezone={timezone} />
+          <Clock format={"hh:mm:ss  A"} ticking={true} timezone={timezone} />
         </div>
       </div>
       <div className="">{countryName}</div>
